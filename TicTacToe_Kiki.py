@@ -26,12 +26,15 @@ def play_game():
     display_board()
 
     # Loop until the game stops (winner or tie)
+    #tutaendelea hadi mtu ashinde kuwe na 'xxx' ama 'ooo'
     while game_still_going:
 
         # Handle a turn1
         handle_turn(current_player)
 
-        # Check if the game is over
+        # Check if the game is over 
+        #function ingine ya kuonyesha kama game is over or not 
+        #na ikona only 2 functions under it ya kurdraw na kuwin
         check_if_game_over()
 
         # Flip to the other player
@@ -117,7 +120,10 @@ def check_rows():
     row_1 = board[0] == board[1] == board[2] != "-"
     row_2 = board[3] == board[4] == board[5] != "-"
     row_3 = board[6] == board[7] == board[8] != "-"
+         
     # If any row does have a match, flag that there is a win
+    #kama kuna row iko true to this game imeisha sivyo basi game inaendelea
+         
     if row_1 or row_2 or row_3:
         game_still_going = False
     # Return the winner
@@ -189,6 +195,7 @@ def check_for_tie():
 
 
 # Flip the current player from X to O, or O to X
+#change jamma wa 'x' ama jamaa wa 'y'
 def flip_player():
     # Global variables we need
     global current_player
@@ -201,5 +208,5 @@ def flip_player():
 
 
 # ------------ Start Execution -------------
-# Play a game of tic tac toe
+# Play a game of tic 'tac toe' yaani 'X and Oz' in Kenya.
 play_game()
